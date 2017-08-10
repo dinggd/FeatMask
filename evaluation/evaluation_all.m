@@ -47,7 +47,7 @@ end
 %% Euclidean
 my_pdist2 = @(A, B) sqrt( bsxfun(@plus, sum(A.^2, 2), sum(B.^2, 2)') - 2*(A*B'));
 if isequal(branch,'overall')
-	dist_eu = pdist2(galFea', probFea');
+	dist_eu = my_pdist2(galFea', probFea');
 else
 	dist_eu = my_pdist2(galFea, probFea);
 end
